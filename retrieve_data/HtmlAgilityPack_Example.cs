@@ -1,4 +1,4 @@
-///It shows the titles in the website
+///It lists the titles which are in the website.
 using System;
 using System.Collections.Generic;
 using System.IO;
