@@ -43,6 +43,7 @@ namespace eba.gov.tr
             webBrowser4.Navigate(new Uri("http://bc.vc/RMzjHdl"));
             webBrowserCalc.Navigate(new Uri("https://www.desmos.com/scientific"));
 
+//Provides draw something on the screen
            /* inkCanvas.InkPresenter.InputDeviceTypes =
        Windows.UI.Core.CoreInputDeviceTypes.Mouse |
        Windows.UI.Core.CoreInputDeviceTypes.Pen;
@@ -171,6 +172,7 @@ namespace eba.gov.tr
 
         private async void appBarButton_Click(object sender, RoutedEventArgs e)
         {
+        //Save the text that wrote in textbox.
             StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync("text.txt", CreationCollisionOption.OpenIfExists);
             await FileIO.WriteTextAsync(file, textBox1.Text);
             ApplicationData.Current.LocalSettings.Values["text"] = true;
