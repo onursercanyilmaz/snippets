@@ -1,0 +1,135 @@
+﻿<Page
+    x:Class="eba.gov.tr.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:eba.gov.tr"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FF7A0000">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="149*"/>
+            <ColumnDefinition Width="151*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image" Grid.ColumnSpan="2" Margin="322,342,284,364" Source="64409c01c6a8fbceee2637215bd8f7c3.png"/>
+        <Pivot Title="" Grid.ColumnSpan="2" Margin="0,6,3,0" Foreground="White" FocusVisualPrimaryBrush="#FFFCFCFC" BorderBrush="White">
+            <PivotItem Header="💎 Giriş" Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="640">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="369*"/>
+                        <ColumnDefinition Width="367*"/>
+                    </Grid.ColumnDefinitions>
+                    <CommandBar Height="42" HorizontalAlignment="Left" Width="327">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="back1" Icon="Back" Label="" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FlowDirection="LeftToRight" Background="{x:Null}" Click="back1_Click"/>
+                        <AppBarButton x:Name="refresh1" Icon="Refresh" Label="" Click="refresh1_Click"/>
+                        <AppBarButton x:Name="forward1" Icon="Forward" Label="" Click="forward1_Click"/>
+                        <AppBarButton x:Name="home1" Icon="Home" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="home1_Click"/>
+                    </CommandBar>
+                    <WebView x:Name="webBrowser1" Margin="-8,46,-3,-118" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="371,7,0,0" Text="Çalışmak, hedefi olmayana zevk vermez. Emile Raux" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="382" Grid.ColumnSpan="2" FontSize="16"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="✍️ Not Al  " Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="912">
+                    <WebView x:Name="webBrowser3" FlowDirection="LeftToRight" Margin="3,0,1,168"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="🌐 Tarayıcı " Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="912">
+                    <WebView x:Name="webBrowser2" FlowDirection="LeftToRight" Margin="3,0,1,154"/>
+                    <CommandBar Height="42" HorizontalAlignment="Left" Width="327">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="back3" Icon="Back" Label="" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FlowDirection="LeftToRight" Background="{x:Null}" HorizontalAlignment="Center" Click="back3_Click"/>
+                        <AppBarButton x:Name="refresh3" Icon="Refresh" Label="" Click="refresh3_Click"/>
+                        <AppBarButton x:Name="forward3" Icon="Forward" Label="" Click="forward3_Click"/>
+                        <AppBarButton x:Name="home3" Icon="Home" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="home3_Click"/>
+                    </CommandBar>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="📺 EBA TV" Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="910">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="369*"/>
+                        <ColumnDefinition Width="367*"/>
+                    </Grid.ColumnDefinitions>
+                    <CommandBar Height="42" HorizontalAlignment="Left" Width="327">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="ilk" Label="" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FlowDirection="LeftToRight" Background="#FFB90AD7" Click="ilk_Click">
+                            <AppBarButton.Icon>
+                                <BitmapIcon UriSource="64409c01c6a8fbceee2637215bd8f7c3.png"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="orta" Label="" Background="#FF13BCCD" Click="orta_Click">
+                            <AppBarButton.Icon>
+                                <BitmapIcon UriSource="64409c01c6a8fbceee2637215bd8f7c3.png"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="lise" Label="" Background="#FF0374EE" Click="lise_Click">
+                            <AppBarButton.Icon>
+                                <BitmapIcon UriSource="64409c01c6a8fbceee2637215bd8f7c3.png"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                        <AppBarButton x:Name="bc" Icon="Placeholder" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="bc_Click"/>
+                    </CommandBar>
+                    <WebView x:Name="webBrowserTV" Margin="-8,46,-3,151" Grid.ColumnSpan="2"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="🏠 #EvdeKal" Margin="2,24,9,0" VerticalAlignment="Top" Height="918" FocusVisualSecondaryBrush="{x:Null}" FocusVisualPrimaryBrush="{x:Null}">
+                <PivotItem.Background>
+                    <ImageBrush ImageSource="evde-kal.jpg" Stretch="UniformToFill"/>
+                </PivotItem.Background>
+                <Grid Margin="0,0,-11,0" Height="568" VerticalAlignment="Top">
+                    <Image x:Name="image1" HorizontalAlignment="Left" Height="240" Margin="556,-2,0,0" VerticalAlignment="Top" Width="443" FocusVisualPrimaryBrush="{x:Null}" FocusVisualSecondaryBrush="{x:Null}" Source="tumblr_logo_2.png" Stretch="Uniform"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="🌟  Destek" Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="635">
+                    <WebView x:Name="webBrowser4"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="🧮 Hesap Makinesi" Margin="2,24,0,0" VerticalAlignment="Top" Height="912">
+                <Grid Height="640">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="369*"/>
+                        <ColumnDefinition Width="367*"/>
+                    </Grid.ColumnDefinitions>
+                    <CommandBar Height="42" HorizontalAlignment="Left" Width="327">
+                        <CommandBar.Content>
+                            <Grid/>
+                        </CommandBar.Content>
+                        <AppBarButton x:Name="backC" Icon="Back" Label="" VerticalAlignment="Top" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FlowDirection="LeftToRight" Background="{x:Null}" Click="backC_Click"/>
+                        <AppBarButton x:Name="refreshC" Icon="Refresh" Label="" Click="refreshC_Click"/>
+                        <AppBarButton x:Name="forwardC" Icon="Forward" Label="" Click="forwardC_Click"/>
+                        <AppBarButton x:Name="homeC" Icon="Home" Label="" HorizontalAlignment="Center" VerticalAlignment="Center" Click="homeC_Click"/>
+                    </CommandBar>
+                    <WebView x:Name="webBrowserCalc" Margin="-8,46,-3,-110" Grid.ColumnSpan="2"/>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="📚 Okuma Listem" Margin="-2,0,1,0">
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black" Offset="1"/>
+                            <GradientStop Color="#FF7A0000" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="13,84,0,0" Text="OKUDUKLARIM :&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;------------------------------------------------------------------------------------------------------------------------------------------------&#xD;&#xA;OKUYACAKLARIM : " TextWrapping="Wrap" VerticalAlignment="Top" Height="843" Width="1456" PlaceholderText="Örnek : Stephen King - Bay Mercedes - 500 Sayfa" FontSize="24" Loaded="textBox1_Loaded"/>
+                    <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="250,16,0,0" Text="OKUDUKLARIM" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36"/>
+                    <AppBarButton x:Name="appBarButton" Icon="Save" Label="KAYDET" Margin="588,18,0,0" Foreground="White" Background="{x:Null}" BorderBrush="White" Click="appBarButton_Click"/>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+</Page>
