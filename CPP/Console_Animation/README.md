@@ -1,2 +1,2 @@
-# C++ Console Animations
-***C++ Console Animation and Game Applications***
+# 🕹️ C++ Console Animations
+***Making C++ Console Animation and Game Applications by changing cursor.***
