@@ -37,7 +37,7 @@ int main()
     emp.Human::eat(); //I want to eat SOMETHING
     emp.eat();  //"I want to eat FISH"
    // emp.eat("I would like to eat FISH and drink WINE"); //I would like to eat FISH and drink WINE
-    emp.Human::eat("I would like to eat FISH and drink WINE"); //Or we can use from Paretn class without writing the code which is before 1 line in child class 
+    emp.Human::eat("I would like to eat FISH and drink WINE"); //Or we can use from Parent class without writing the code which is before 1 line in child class 
   
 }
 
