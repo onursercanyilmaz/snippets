@@ -4,7 +4,7 @@
 #include<string>
 
 using namespace std;
-//Constructor Deconstructor UNUTMA!
+
 //-------------CLIENT----------------
 class Client
 {
