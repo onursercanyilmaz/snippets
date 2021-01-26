@@ -1,0 +1,9 @@
+ var currentTab = tabs.SelectedItem as TabViewItem;
+    if (currentTab != null)
+    {
+        var webView = currentTab.Content as WebView;
+        if (webView.CanGoBack)
+        {
+            webView.GoBack();
+        }
+    }
