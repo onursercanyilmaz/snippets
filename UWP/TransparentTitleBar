@@ -1,0 +1,20 @@
+//https://docs.microsoft.com/en-us/windows/uwp/design/shell/title-bar
+
+
+<Grid x:Name="AppTitleBar" Background="Transparent">
+    <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->
+    <!-- Using padding columns instead of Margin ensures that the background
+         paints the area under the caption control buttons (for transparent buttons). -->
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+        <ColumnDefinition/>
+        <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+    </Grid.ColumnDefinitions>
+    <Image Source="Assets/Square44x44Logo.png" 
+           Grid.Column="1" HorizontalAlignment="Left" 
+           Width="20" Height="20" Margin="12,0"/>
+    <TextBlock Text="Custom Title Bar" 
+               Grid.Column="1" 
+               Style="{StaticResource CaptionTextBlockStyle}" 
+               Margin="44,8,0,0"/>
+</Grid>
