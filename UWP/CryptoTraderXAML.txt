@@ -1,0 +1,119 @@
+<Grid>
+
+        <muxc:NavigationView x:Name="navigationView" HorizontalAlignment="Stretch" IsSettingsVisible="False" IsBackEnabled="True" BackRequested="navigationView_BackRequested" Background="#FF393939">
+            <muxc:NavigationView.MenuItems>
+                <muxc:NavigationViewItem x:Name="tradingViewItem"  Content="☁️  TradingView" Tag="SamplePage1" FontSize="18" Tapped="tradingViewItem_Tapped" >
+                    <muxc:NavigationViewItem.Background>
+                        <AcrylicBrush TintColor="#CC242582" BackgroundSource="Backdrop" Opacity="0.995"/>
+                    </muxc:NavigationViewItem.Background>
+                </muxc:NavigationViewItem>
+                
+                <muxc:NavigationViewItem x:Name="refreshItem" Icon="Refresh" Content="Refresh" Tag="SamplePage3" Tapped="refreshItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="forwardItem" Icon="Forward" Content="Forward" Tag="SamplePage4" Tapped="forwardItem_Tapped" />
+
+                <muxc:NavigationViewItem x:Name="binanceItem"  Content="₿    Binance" Tag="SamplePage5" Tapped="binanceItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="btcTurkItem"  Content="₿    BTCTurk" Tag="SamplePage6" Tapped="btcTurkItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="trbinanceItem"  Content="₿    TRBinance" Tag="SamplePage7" Tapped="trbinanceItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="CoinbaseItem"  Content="₿    Coinbase" Tag="SamplePage8" Tapped="CoinbaseItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="bitfinexItem" Content="₿    Bitfinex" Tag="SamplePage9" Tapped="bitfinexItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="BitstampItem"  Content="₿    Bitstamp" Tag="SamplePage10" Tapped="BitstampItem_Tapped" />
+                <muxc:NavigationViewItem x:Name="KrakenItem"  Content="₿    Kraken" Tag="SamplePage11" Tapped="KrakenItem_Tapped" />
+
+                <TextBlock Text="Crypto News" TextAlignment="Center" FontSize="20"/>
+                <muxc:NavigationViewItem x:Name="news1" Icon="World" Content="CoinMarketCap" Tag="SamplePage9" Tapped="news1_Tapped" />
+                <muxc:NavigationViewItem x:Name="news2" Icon="World" Content="Coindesk" Tag="SamplePage10" Tapped="news2_Tapped" />
+                <muxc:NavigationViewItem x:Name="news3"  Icon="World" Content="CoinTelegraph" Tag="SamplePage11" Tapped="news3_Tapped" />
+                <muxc:NavigationViewItem x:Name="news4" Icon="World" Content="Twitter" Tag="SamplePage10" Tapped="news4_Tapped" />
+                <muxc:NavigationViewItem x:Name="news5"  Icon="World" Content="Google" Tag="SamplePage11" Tapped="news5_Tapped" />
+
+
+            </muxc:NavigationView.MenuItems>
+            <Frame x:Name="contentFrame">
+                <Frame.Background>
+                    <ImageBrush ImageSource="/Assets/Screenshot_2021-01-26 Wix Logo Maker(1).png" Stretch="Uniform"/>
+                </Frame.Background>
+                <muxc:TabView x:Name="TabView" Margin="0,-37,0,10" VerticalAlignment="Stretch" TabCloseRequested="TabView_TabCloseRequested" IsAddTabButtonVisible="False"  >
+                    <muxc:TabView.Background>
+                        <AcrylicBrush TintColor="#CC0F1F43"/>
+                    </muxc:TabView.Background>
+
+
+
+                    <muxc:TabViewItem Header="Binance" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="Binance_Loaded" IsClosable="False" BorderBrush="Yellow">
+                        <WebView x:Name="webviewBinance"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+                    <muxc:TabViewItem Header="BTCTurk" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="BTCTurk_Loaded" IsClosable="False">
+                        <WebView x:Name="webviewBTCTurk"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+                    <muxc:TabViewItem Header="TRBinance" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="TRBinance_Loaded" IsClosable="False">
+                        <WebView x:Name="webviewTRBinance"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+                    <muxc:TabViewItem Header="Coinbase" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="Coinbase_Loaded" IsClosable="False">
+                        <WebView x:Name="webviewCoinbase"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+                    <muxc:TabViewItem Header="Bitfinex" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="Bitfinex_Loaded" IsClosable="False">
+                        <WebView x:Name="webview1Bitfinex"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+                    <muxc:TabViewItem Header="Bitstamp" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="Bitstamp_Loaded" IsClosable="False">
+                        <WebView x:Name="webviewBitstamp"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+
+
+
+                    <muxc:TabViewItem Header="Kraken" Width="183" RenderTransformOrigin="0.5,0.5" Tapped="Kraken_Loaded" IsClosable="False">
+                        <WebView x:Name="webviewKraken"  RenderTransformOrigin="0.5,0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                            <WebView.RenderTransform>
+                                <CompositeTransform ScaleX="1" ScaleY="1"/>
+                            </WebView.RenderTransform>
+                        </WebView>
+                    </muxc:TabViewItem>
+                </muxc:TabView>
+            </Frame>
+        </muxc:NavigationView>
+
+
+        <Grid x:Name="AppTitleBar">
+            <Grid.Background>
+                <ImageBrush Stretch="None"/>
+            </Grid.Background>
+            <!-- Width of the padding columns is set in LayoutMetricsChanged handler. -->
+            <!-- Using padding columns instead of Margin ensures that the background
+         paints the area under the caption control buttons (for transparent buttons). -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+
+    </Grid>
