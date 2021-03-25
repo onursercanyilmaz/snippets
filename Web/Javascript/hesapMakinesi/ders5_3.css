@@ -1,0 +1,70 @@
+
+body{
+	
+	 background: linear-gradient(to right, red, blue);
+	 cursor: alias;
+}
+
+input{
+  margin-top: 200px;
+  margin-left: 35%;
+  margin-bottom: auto;
+  direction: RTL;
+  width: 30%;
+  
+
+  font-family: sans-serif;
+	font-size: 40px;
+	color: black;
+
+
+  
+
+}
+table
+{
+	margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  border-spacing: 10px;
+
+
+
+}
+
+tr{
+	background-color: #FE0000
+
+	
+}
+
+
+td{
+	font-family: sans-serif;
+	font-size: 20px;
+	color: white;
+	border: 1px solid white;
+
+	text-align: center;
+
+}
+
+button{
+	display: all;
+	width: 100%;
+	border-color: : #transparent;
+	padding: 20px;
+	
+	background-color: Transparent;
+	font-family: sans-serif;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+	display: inline-block;
+
+}
+
+
+
+
