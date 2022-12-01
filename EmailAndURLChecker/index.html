@@ -1,0 +1,85 @@
+<html>
+<header>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>
+.center {
+position: absolute;
+  top: 20%;
+  left: 30%;
+
+}
+</style>
+</h<body>
+<h1>BIM 413 Biçimsel Diller ve Otomata - Onur Sercan Yılmaz</h1>
+<div class="center" />
+<label for="email">Email adresi giriniz: </label>
+<input id="email" />
+<h2 id="result"></h2>
+<br>
+<hr>
+<br>
+<label for="url">URL  giriniz: </label>
+<input id="url" />
+<h2 id="result2"></h2>
+</div>
+
+
+<script>
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
+
+const validateUrl = (url) => {
+  return url.match(
+    /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
+  );
+};
+
+
+const validate1 = () => {
+  const $result = $('#result');
+  const email = $('#email').val();
+  $result.text('');
+
+  if (validateEmail(email)) {
+    $result.text(email + '	\t ✔️ GEÇERLİ!');
+    $result.css('color', 'green');
+  } else {
+    $result.text(email + '	\t ❌ GEÇERSİZ!');
+    $result.css('color', 'red');
+  }
+
+
+  return false;
+}
+
+
+const validate2 = () => {
+  const $result2 = $('#result2');
+  const url = $('#url').val();
+  $result2.text('');
+
+  if (validateUrl(url)) {
+    $result2.text(url + '	\t ✔️ GEÇERLİ!');
+    $result2.css('color', 'green');
+  } else {
+    $result2.text(url + '	\t ❌ GEÇERSİZ!');
+    $result2.css('color', 'red');
+  }
+
+
+  return false;
+}
+
+$('#email').on('input', validate1);
+$('#url').on('input', validate2);
+
+</script>
+
+
+</body>
+
