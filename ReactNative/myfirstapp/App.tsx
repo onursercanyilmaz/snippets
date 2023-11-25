@@ -10,11 +10,13 @@ export default function App() {
       <View style={myStyle.lowerView}>
         <Text style={myStyle.text}>App</Text>
       </View>
-      <Button
-        title="Hello"
-        onPress={() => console.log('Button pressed')}
-        color={'red'}
-      />
+      <View style={myStyle.buttonView}>
+        <Button
+          title="Hello"
+          onPress={() => console.log('Button pressed')}
+          color={'purple'}
+        />
+      </View>
     </SafeAreaView>
   );
 }
@@ -23,18 +25,29 @@ const myStyle = StyleSheet.create({
   container: {
     //total flex 1
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     color: 'red',
     fontSize: 20,
   },
   upperView: {
-    flex: 1, //stretch as you can in the parent
     backgroundColor: 'yellow',
+    width: 75,
+    height: 75,
   },
   lowerView: {
-    flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'pink',
+    width: 75,
+    height: 75,
+  },
+  buttonView: {
+    backgroundColor: 'red',
+    width: 75,
+    height: 75,
+    justifyContent: 'center',
   },
 });
