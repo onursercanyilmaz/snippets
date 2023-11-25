@@ -23,6 +23,7 @@ const myStyle = StyleSheet.create({
   container: {
     //total flex 1
     flex: 1,
+    flexDirection: 'row',
   },
   text: {
     color: 'red',
