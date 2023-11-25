@@ -5,23 +5,39 @@ import {
   StyleSheet,
   TouchableOpacity,
   Button,
+  Alert,
 } from 'react-native';
 import React from 'react';
+import Card from './components/card/Card';
 
 export default function App() {
+  const employeeList = [
+    {
+      name: 'Onur Sercan Yılmaz',
+      position: 'Software Engineer',
+    },
+
+    {
+      name: 'Jane Doe',
+      position: 'Software Engineer',
+    },
+
+    {
+      name: 'John Smith',
+      position: 'Software Engineer',
+    },
+  ];
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.card_container}>
-        <View style={styles.card_body}>
-          <Text style={styles.card_title}>Onur Sercan Yılmaz</Text>
-          <Text style={styles.card_text}>Software Engineer</Text>
-        </View>
-        <TouchableOpacity style={styles.button_container}>
-          <Text onPress={() => {}} style={styles.button}>
-            + ADD
-          </Text>
-        </TouchableOpacity>
-      </View>
+      {employeeList.map((employee: any) => (
+        <Card
+          styles={styles}
+          cardDescription={employee.position}
+          cardTitle={employee.name}
+          buttonText={'+ ADD'}
+          onPress={() => Alert.alert(employee.name + ' added!')}
+        />
+      ))}
     </SafeAreaView>
   );
 }
@@ -35,7 +51,7 @@ const styles = StyleSheet.create({
   },
   card_container: {
     backgroundColor: '#fff',
-
+    width: '90%',
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 10,
