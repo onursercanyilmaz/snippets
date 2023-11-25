@@ -1,53 +1,70 @@
-import {View, Text, SafeAreaView, Button, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  TouchableOpacity,
+  Button,
+} from 'react-native';
 import React from 'react';
 
 export default function App() {
   return (
-    <SafeAreaView style={myStyle.container}>
-      <View style={myStyle.upperView}>
-        <Text style={myStyle.text}>App</Text>
-      </View>
-      <View style={myStyle.lowerView}>
-        <Text style={myStyle.text}>App</Text>
-      </View>
-      <View style={myStyle.buttonView}>
-        <Button
-          title="Hello"
-          onPress={() => console.log('Button pressed')}
-          color={'purple'}
-        />
+    <SafeAreaView style={styles.container}>
+      <View style={styles.card_container}>
+        <View style={styles.card_body}>
+          <Text style={styles.card_title}>Onur Sercan Yılmaz</Text>
+          <Text style={styles.card_text}>Software Engineer</Text>
+        </View>
+        <TouchableOpacity style={styles.button_container}>
+          <Text onPress={() => {}} style={styles.button}>
+            + ADD
+          </Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 }
 
-const myStyle = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    //total flex 1
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: 'white',
-    justifyContent: 'space-around',
+    backgroundColor: '#e0e0e0',
     alignItems: 'center',
-  },
-  text: {
-    color: 'red',
-    fontSize: 20,
-  },
-  upperView: {
-    backgroundColor: 'yellow',
-    width: 75,
-    height: 75,
-  },
-  lowerView: {
-    backgroundColor: 'pink',
-    width: 75,
-    height: 75,
-  },
-  buttonView: {
-    backgroundColor: 'red',
-    width: 75,
-    height: 75,
     justifyContent: 'center',
+  },
+  card_container: {
+    backgroundColor: '#fff',
+
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 10,
+    margin: 10,
+  },
+  card_body: {
+    padding: 10,
+  },
+  card_title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    margin: 10,
+    marginBottom: 0,
+  },
+  card_text: {
+    fontSize: 20,
+    margin: 10,
+    marginTop: 5,
+  },
+  button_container: {
+    backgroundColor: 'aqua',
+    padding: 10,
+    alignItems: 'center',
+    borderBottomEndRadius: 10,
+    borderBottomStartRadius: 10,
+  },
+  button: {
+    fontWeight: 'bold',
+    color: '#fff',
+    fontSize: 20,
   },
 });
