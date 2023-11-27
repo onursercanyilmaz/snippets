@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, SafeAreaView, FlatList} from 'react-native';
+import {View, Text, SafeAreaView, FlatList, ScrollView} from 'react-native';
 import axios from 'axios';
 import Card from './components/Cards/index';
 import {REACT_APP_NEWS_URL} from '../config'; // Import the environment variable
@@ -29,11 +29,20 @@ export default function App() {
     <SafeAreaView>
       <View>
         {data.length > 0 ? (
-          <FlatList
-            data={data}
-            keyExtractor={(item: any) => item.title} // Use a unique key for each item
-            renderItem={({item}) => <Card key={item.title} data={item} />} // Use your Card component and pass relevant props
-          />
+          <>
+            <FlatList
+              ListHeaderComponent={() => (
+                <ScrollView horizontal>
+                  {data.map((item: any) => {
+                    return <Card key={item.title} data={item} />;
+                  })}
+                </ScrollView>
+              )}
+              data={data}
+              keyExtractor={(item: any) => item.title} // Use a unique key for each item, it is important for React to know which item has changed
+              renderItem={({item}) => <Card key={item.title} data={item} />} // Use your Card component and pass relevant props
+            />
+          </>
         ) : (
           <Text>Loading...</Text>
         )}
