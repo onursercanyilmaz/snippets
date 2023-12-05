@@ -1,6 +1,6 @@
 // App.js
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -11,20 +11,29 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen
+          name="Profile"
+          component={ProfileScreen}
+          options={{title: 'Deneme'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-interface AboutScreenProps {
+interface ProfileScreenProps {
   navigation: any;
   route: any;
 }
-export function AboutScreen(props: AboutScreenProps) {
+export function ProfileScreen(props: ProfileScreenProps) {
+  const person = React.useMemo(() => {
+    return props.route.params.person;
+  }, [props.route.params.id]);
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>About Screen {props.route.params.name} </Text>
+      <Text>Age: {person.age}</Text>
+      <Text>Job: {person.job}</Text>
+      <Text>Bio: {person.bio}</Text>
     </View>
   );
 }
@@ -36,14 +45,29 @@ type HomeScreenProps = {
   navigation: any;
 };
 
+const people = [
+  {id: 0, name: 'Jane', age: 18, job: 'designer', bio: 'Lorem ipsum'},
+  {id: 1, name: 'John', age: 20, job: 'developer', bio: 'Lorem ipsum'},
+  {id: 2, name: 'Bob', age: 22, job: 'manager', bio: 'Lorem ipsum'},
+];
+
 export function HomeScreen(props: HomeScreenProps) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to About"
-        onPress={() => props.navigation.navigate('About', {name: 'Jane'})}
-      />
+      <Text>Home Screeeeen</Text>
+
+      <FlatList
+        data={people}
+        renderItem={({item}) => {
+          return (
+            <Button
+              title={item.name}
+              onPress={() => {
+                props.navigation.navigate('Profile', {person: item});
+              }}
+            />
+          );
+        }}></FlatList>
     </View>
   );
 }
