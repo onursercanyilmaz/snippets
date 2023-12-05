@@ -14,7 +14,27 @@ export default function App() {
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
-          options={{title: 'Deneme'}}
+          options={{
+            title: 'Deneme',
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#000',
+            headerTitleStyle: {fontWeight: 'bold'},
+            headerRight: () => (
+              <Button
+                onPress={() => alert('This is a button!')}
+                title="Info"
+                color="grey"
+              />
+            ),
+            headerSearchBarOptions: {
+              headerIconColor: 'red',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
@@ -31,7 +51,10 @@ export function ProfileScreen(props: ProfileScreenProps) {
   }, [props.route.params.id]);
 
   React.useEffect(() => {
-    props.navigation.setOptions({title: person.name + "'s Profile"});
+    props.navigation.setOptions({
+      title: person.name + "'s Profile",
+      headerStyle: {backgroundColor: 'yellow'},
+    });
   }, [person]);
 
   return (
