@@ -29,6 +29,11 @@ export function ProfileScreen(props: ProfileScreenProps) {
   const person = React.useMemo(() => {
     return props.route.params.person;
   }, [props.route.params.id]);
+
+  React.useEffect(() => {
+    props.navigation.setOptions({title: person.name + "'s Profile"});
+  }, [person]);
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Age: {person.age}</Text>
