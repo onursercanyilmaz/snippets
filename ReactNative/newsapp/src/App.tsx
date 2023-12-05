@@ -17,10 +17,14 @@ export default function App() {
   );
 }
 
-export function AboutScreen() {
+interface AboutScreenProps {
+  navigation: any;
+  route: any;
+}
+export function AboutScreen(props: AboutScreenProps) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>About Screen</Text>
+      <Text>About Screen {props.route.params.name} </Text>
     </View>
   );
 }
@@ -38,7 +42,7 @@ export function HomeScreen(props: HomeScreenProps) {
       <Text>Home Screen</Text>
       <Button
         title="Go to About"
-        onPress={() => props.navigation.navigate('About')}
+        onPress={() => props.navigation.navigate('About', {name: 'Jane'})}
       />
     </View>
   );
