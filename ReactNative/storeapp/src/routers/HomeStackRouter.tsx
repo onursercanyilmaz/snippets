@@ -7,7 +7,7 @@ const HomeStack = createNativeStackNavigator();
 export default function HomeStackScreen() {
   return (
     <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={ProductsPage} />
+      <HomeStack.Screen name="Products" component={ProductsPage} />
       <HomeStack.Screen name="ProductDetail" component={ProductDetailPage} />
     </HomeStack.Navigator>
   );
