@@ -21,13 +21,13 @@ export default function useFetch(props: useFetchProps) {
         setError(err);
       })
       .finally(() => {
-        setLoading(false);
+        //setLoading(false);
       });
   };
 
   useEffect(() => {
     fetchData();
-    setLoading(false);
+    //setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

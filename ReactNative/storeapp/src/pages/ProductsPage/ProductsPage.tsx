@@ -3,6 +3,8 @@ import React, {useState, useEffect} from 'react';
 import Config from 'react-native-config';
 import styles from './ProductsPage.style';
 import useFetch from '../../hooks/useFetch/useFetch';
+import Loading from '../../components/LoadingCard';
+import Error from '../../components/ErrorCard';
 
 interface ProductsPageProps {
   navigation: any;
@@ -12,20 +14,16 @@ export default function ProductsPage() {
   const URL: string = Config.API_URL || '';
   const {data, loading, error} = useFetch({url: URL});
 
-  console.log(data);
+  console.log(error);
   if (loading) {
     return (
       <View>
-        <Text>Loading...</Text>
+        <Loading />
       </View>
     );
   }
   if (error) {
-    return (
-      <View>
-        <Text style={{color: 'red'}}>{error.response.status} Error</Text>
-      </View>
-    );
+    return <Error />;
   }
   return (
     <>
