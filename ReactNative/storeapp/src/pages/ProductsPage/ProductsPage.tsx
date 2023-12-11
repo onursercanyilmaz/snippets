@@ -1,4 +1,11 @@
-import {View, Text, FlatList, Image} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  TouchableWithoutFeedback,
+  Alert,
+} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Config from 'react-native-config';
 import styles from './ProductsPage.style';
@@ -10,11 +17,10 @@ interface ProductsPageProps {
   navigation: any;
 }
 
-export default function ProductsPage() {
+export default function ProductsPage(props: ProductsPageProps) {
   const URL: string = Config.API_URL || '';
   const {data, loading, error} = useFetch({url: URL});
 
-  console.log(error);
   if (loading) {
     return (
       <View>
@@ -32,14 +38,19 @@ export default function ProductsPage() {
           keyExtractor={(item: any) => item.id}
           data={data}
           renderItem={(item: any) => (
-            <View style={styles.listItem}>
-              <Image
-                source={{uri: item.item.image}}
-                style={styles.listItemIcon}
-              />
-              <Text style={styles.listItemTitle}>{item.item.title}</Text>
-              <Text style={styles.listItemPrice}>{item.item.price}</Text>
-            </View>
+            <TouchableWithoutFeedback
+              onPress={() =>
+                props.navigation.navigate('ProductDetail', {id: item.item.id})
+              }>
+              <View style={styles.listItem}>
+                <Image
+                  source={{uri: item.item.image}}
+                  style={styles.listItemIcon}
+                />
+                <Text style={styles.listItemTitle}>{item.item.title}</Text>
+                <Text style={styles.listItemPrice}>{item.item.price}</Text>
+              </View>
+            </TouchableWithoutFeedback>
           )}
         />
       </View>

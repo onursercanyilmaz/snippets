@@ -10,7 +10,6 @@ export default function useFetch(props: useFetchProps) {
   const [error, setError] = useState<any>(null);
 
   const fetchData = async () => {
-    console.log(props.url);
     await axios
       .get(props.url)
       .then(res => {
@@ -21,7 +20,7 @@ export default function useFetch(props: useFetchProps) {
         setError(err);
       })
       .finally(() => {
-        //setLoading(false);
+        setLoading(false);
       });
   };
 
