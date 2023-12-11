@@ -1,12 +1,20 @@
-import {View, Text, Touchable, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Touchable,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native';
 import React from 'react';
 import styles from './Button.style';
-export default function Button() {
+
+interface ButtonProps {
+  onPress: (() => void) | undefined;
+}
+export default function Button(props: ButtonProps) {
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => console.log('Button pressed')}>
-      <Text style={styles.label}>Button</Text>
+    <TouchableOpacity style={styles.container} onPress={props.onPress}>
+      <Text style={styles.label}>Login</Text>
     </TouchableOpacity>
   );
 }

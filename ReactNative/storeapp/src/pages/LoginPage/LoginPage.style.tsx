@@ -32,4 +32,12 @@ export default StyleSheet.create({
     objectFit: 'contain',
     marginBottom: 50,
   },
+
+  errorText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
 });

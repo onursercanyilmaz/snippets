@@ -6,6 +6,7 @@ import HomeStackRouter from './src/routers/HomeStackRouter';
 import SettingsStackRouter from './src/routers/SettingsStackRouter';
 import LoginPage from './src/pages/LoginPage/LoginPage';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
