@@ -9,9 +9,17 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import usePost from '../../hooks/usePost/usePost';
 import {ActivityIndicator} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useDispatch} from 'react-redux';
+import {login} from '../../context/AuthProvider/authSlicer';
 
-export default function LoginPage() {
+interface LoginPageProps {
+  navigation: any;
+}
+
+export default function LoginPage(props: LoginPageProps) {
   const {data, loading, error, post} = usePost();
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
     username: Yup.string().required('Username is required'),
@@ -20,6 +28,9 @@ export default function LoginPage() {
 
   const handleLogin = (values: any) => {
     post(Config.AUTH_URL, values);
+    if (data && error === null) {
+      dispatch(login(data));
+    }
   };
 
   return (

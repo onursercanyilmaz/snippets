@@ -2,7 +2,7 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 
 export default function usePost() {
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>(null);
 
@@ -15,12 +15,11 @@ export default function usePost() {
       })
 
       .then(res => {
-        console.log(res);
         setData(res.data);
         setError(null);
       })
       .catch(err => {
-        console.log(err.response);
+        setData(null);
         setError(err);
       })
       .finally(() => {
