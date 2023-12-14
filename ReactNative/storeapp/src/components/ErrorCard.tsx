@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from 'react';
-import {Animated, Easing} from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, Easing } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 const AnimatedLottieView = Animated.createAnimatedComponent(LottieView);
@@ -18,7 +18,7 @@ export default function ErrorCard() {
 
   return (
     <AnimatedLottieView
-      style={{width: '100%', height: '100%'}}
+      style={{ width: '100%', height: '100%' }}
       source={require('../assets/error.json')}
       progress={animationProgress.current}
       autoPlay

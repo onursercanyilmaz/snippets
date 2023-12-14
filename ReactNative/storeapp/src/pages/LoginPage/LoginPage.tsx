@@ -1,24 +1,30 @@
-import {View, Text, Image, KeyboardAvoidingView, Platform} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './LoginPage.style';
 import Config from 'react-native-config';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
-import {Formik} from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import usePost from '../../hooks/usePost/usePost';
-import {ActivityIndicator} from 'react-native';
+import { ActivityIndicator } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useDispatch} from 'react-redux';
-import {login} from '../../context/AuthProvider/authSlicer';
+import { useDispatch } from 'react-redux';
+import { login } from '../../context/AuthProvider/authSlicer';
 
 interface LoginPageProps {
   navigation: any;
 }
 
 export default function LoginPage(props: LoginPageProps) {
-  const {data, loading, error, post} = usePost();
+  const { data, loading, error, post } = usePost();
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object().shape({
@@ -46,7 +52,7 @@ export default function LoginPage(props: LoginPageProps) {
 
       <Formik
         validationSchema={validationSchema}
-        initialValues={{username: '', password: ''}}
+        initialValues={{ username: '', password: '' }}
         onSubmit={values => handleLogin(values)}>
         {({
           handleChange,

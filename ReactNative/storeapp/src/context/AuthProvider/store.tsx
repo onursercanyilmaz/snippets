@@ -1,5 +1,5 @@
 import React from 'react';
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import authSlicer from './authSlicer';
 
 const store = configureStore({

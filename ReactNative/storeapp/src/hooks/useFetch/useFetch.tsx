@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 interface useFetchProps {
   url: string;
@@ -30,5 +30,5 @@ export default function useFetch(props: useFetchProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return {data, loading, error};
+  return { data, loading, error };
 }

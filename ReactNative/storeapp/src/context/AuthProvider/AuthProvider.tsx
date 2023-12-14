@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Provider} from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
 import store from './store';
 interface AuthProviderProps {
   children: React.ReactNode;

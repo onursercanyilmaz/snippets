@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
 export default function usePost() {
   const [data, setData] = useState<any>(null);
@@ -27,5 +27,5 @@ export default function usePost() {
       });
   };
 
-  return {data, loading, error, post};
+  return { data, loading, error, post };
 }
