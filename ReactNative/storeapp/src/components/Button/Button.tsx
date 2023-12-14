@@ -8,17 +8,20 @@ import {
 import React from 'react';
 import styles from './Button.style';
 
+type Theme = 'primary' | 'secondary'; // Add this line
+
 interface ButtonProps {
   onPress: (() => void) | undefined;
+  theme?: Theme;
 }
-export default function Button(props: ButtonProps) {
+export default function Button({onPress, theme = 'primary'}: ButtonProps) {
   return (
     <TouchableOpacity
-      style={styles.container}
-      onPress={props.onPress}
+      style={styles[theme].container}
+      onPress={onPress}
       testID='button'
     >
-      <Text style={styles.label}>Login</Text>
+      <Text style={styles[theme].label}>Login</Text>
     </TouchableOpacity>
   );
 }
