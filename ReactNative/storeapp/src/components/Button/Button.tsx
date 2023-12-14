@@ -13,7 +13,11 @@ interface ButtonProps {
 }
 export default function Button(props: ButtonProps) {
   return (
-    <TouchableOpacity style={styles.container} onPress={props.onPress}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={props.onPress}
+      testID='button'
+    >
       <Text style={styles.label}>Login</Text>
     </TouchableOpacity>
   );

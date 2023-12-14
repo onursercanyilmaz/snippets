@@ -44,6 +44,7 @@ exports[` 1`] = `
       "width": 550,
     }
   }
+  testID="button"
 >
   <Text
     style={
