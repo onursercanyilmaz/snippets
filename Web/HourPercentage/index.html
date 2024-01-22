@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workday Percentage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #percentage {
+            font-size: 50px;
+            border: 1px solid black;
+            border-radius: 50px;
+            border-width: 50px;
+            padding: 20px;
+            display: inline-block;
+            width: 300px; /* Fixed width */
+            background-image: linear-gradient(to right, lightgreen 0%, lightgreen 50%, lightgrey 50%, lightgrey 100%);
+        }
+        #refreshButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .time-inputs {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Workday Percentage Calculator</h1>
+    <p>Percentage of the workday completed</p>
+    <div class="time-inputs">
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime" value="08:45">
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime" value="17:30">
+        <button onclick="calculatePercentage()">Calculate</button>
+    </div>
+    <p id="percentage"></p>
+    <br/>
+    <button id="refreshButton">Refresh Page</button>
+
+    <script>
+        function getTimeFromDate(date) {
+            return date.getHours() + date.getMinutes() / 60 + date.getSeconds() / 3600;
+        }
+
+        function calculatePercentage() {
+            const now = new Date();
+            const startTimeInput = document.getElementById('startTime').value.split(':');
+            const endTimeInput = document.getElementById('endTime').value.split(':');
+
+            // Define start and end times
+            const startTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(startTimeInput[0]), parseInt(startTimeInput[1]), 0);
+            const endTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), parseInt(endTimeInput[0]), parseInt(endTimeInput[1]), 0);
+
+            // Total workday duration in milliseconds
+            const totalWorkDayDuration = endTime - startTime;
+
+            // Elapsed time since the start of the workday
+            let elapsedTime = now - startTime;
+
+            // Handle before start and after end times
+            if (now < startTime) {
+                elapsedTime = 0; // Day hasn't started
+            } else if (now > endTime) {
+                elapsedTime = totalWorkDayDuration; // Day has ended
+            }
+
+            // Calculate the percentage
+            const percentage = (elapsedTime / totalWorkDayDuration) * 100;
+
+            // Display the result
+            const percentageElement = document.getElementById('percentage');
+            percentageElement.textContent = `${percentage.toFixed(2)}%`;
+
+            // Update background based on the percentage
+            percentageElement.style.backgroundImage = `linear-gradient(to right, lightgreen 0%, lightgreen ${percentage}%, lightgrey ${percentage}%, lightgrey 100%)`;
+        }
+
+        // Refresh page function
+        document.getElementById('refreshButton').addEventListener('click', function() {
+            window.location.reload();
+        });
+
+        // Initial calculation
+        calculatePercentage();
+    </script>
+</body>
+</html>
